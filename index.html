@@ -13,9 +13,11 @@
         }
         body {
             display: flex;
+            flex-direction: column; /* 縦並び */
             justify-content: center;
             align-items: center;
             text-align: center;
+            gap: 20px; /* リンクとウィジェットの間に余白 */
         }
         a {
             font-size: 1.5em;
@@ -25,13 +27,19 @@
         a:hover {
             text-decoration: underline;
         }
+        iframe {
+            width: 100%;
+            max-width: 646px; /* Steam公式の推奨幅 */
+            height: 190px;
+            border: none;
+        }
     </style>
 </head>
 <body>
 
     <a href="https://sites.google.com/view/yuki-aritake/home">Yuki Aritake's Google Site</a>
 
-    <iframe src="https://store.steampowered.com/widget/4009830/" frameborder="0" width="646" height="190"></iframe>
+    <iframe src="https://store.steampowered.com/widget/4009830/"></iframe>
 
 </body>
 </html>
