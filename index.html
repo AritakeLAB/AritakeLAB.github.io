@@ -3,43 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Link Page</title>
+    <title>Yuki Aritake - Link</title>
     <style>
+        :root {
+            --primary-color: #0077cc;
+            --primary-hover: #005599;
+            --bg-color: #f8fafc;
+            --text-color: #334155;
+            --text-muted: #64748b;
+        }
+
         html, body {
             height: 100%;
             margin: 0;
             padding: 0;
-            font-family: sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans JP", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
         }
+
         body {
             display: flex;
-            flex-direction: column; /* 縦並び */
             justify-content: center;
             align-items: center;
-            text-align: center;
-            gap: 20px; /* リンクとウィジェットの間に余白 */
+            padding: 20px;
+            box-sizing: border-box;
         }
-        a {
-            font-size: 1.5em;
-            color: #0077cc;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        iframe {
+
+        .container {
             width: 100%;
-            max-width: 646px; /* Steam公式の推奨幅 */
-            height: 190px;
-            border: none;
+            max-width: 480px;
+            text-align: center;
+            background: #ffffff;
+            padding: 40px 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .profile-section {
+            margin-bottom: 32px;
+        }
+
+        .name-ja {
+            font-size: 1.625rem;
+            font-weight: 700;
+            margin: 0 0 4px 0;
+            letter-spacing: 0.05em;
+        }
+
+        .name-en {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            margin: 0 0 16px 0;
+            font-weight: 500;
+        }
+
+        .tagline {
+            font-size: 0.937rem;
+            line-height: 1.6;
+            color: var(--text-color);
+            margin: 0;
+            word-break: keep-all;
+        }
+
+        .tagline span {
+            display: block;
+            font-size: 0.812rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        .link-button {
+            display: block;
+            background-color: var(--primary-color);
+            color: #ffffff;
+            font-size: 1.062rem;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 16px 24px;
+            border-radius: 8px;
+            transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 12px rgba(0, 119, 204, 0.2);
+        }
+
+        /* 浮遊感を出すホバーエフェクト */
+        @media (hover: hover) {
+            .link-button:hover {
+                background-color: var(--primary-hover);
+                transform: translateY(-2px);
+                box-shadow: 0 6px 20px rgba(0, 119, 204, 0.3);
+            }
+        }
+
+        .link-button:active {
+            transform: translateY(0);
+        }
+
+        .sub-text {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 400;
+            opacity: 0.8;
+            margin-top: 2px;
         }
     </style>
 </head>
 <body>
 
-    <a href="https://sites.google.com/view/yuki-aritake/home">Go to Yuki Aritake’s Google Site</a>
+    <div class="container">
+        <div class="profile-section">
+            <h1 class="name-ja">有竹 祐樹</h1>
+            <p class="name-en">Yuki Aritake</p>
+            <p class="tagline">
+                「鳥になる」体験をVRと風で作るゲームプロデューサー
+                <span>Game Producer creating "becoming a bird" experiences with VR and wind.</span>
+            </p>
+        </div>
 
-    <iframe src="https://store.steampowered.com/widget/4009830/"></iframe>
+        <a href="https://sites.google.com/view/yuki-aritake/home" class="link-button">
+            Google Site を見る
+            <span class="sub-text">Visit Official Portfolio Website</span>
+        </a>
+    </div>
 
 </body>
 </html>
